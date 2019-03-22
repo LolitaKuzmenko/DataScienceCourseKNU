@@ -13,7 +13,7 @@ integer, complex, logical.
 > num
 [1] 3.14
 
->int<-6 ##integer
+>int<-6L ##integer
 > int
 [1] 6
 
