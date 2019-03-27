@@ -93,7 +93,7 @@
 126    73     183  2.8   93     9   3
 127    91     189  4.6   93     9   4
 
-> mean(my_subset[ , "Solar.R"])
+> mean(my_subset[ , "Solar.R"], na.rm=T)
 [1] 212.8
 
 ```
