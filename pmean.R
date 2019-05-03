@@ -5,7 +5,7 @@
   length(filelist) ## checking the quantity of files (332)
   
     pmean <- function(directory, pollutant, id=1:332) {
-    filelist <- list.files(path="specdata", pattern=".csv", full.names=TRUE)
+    filelist <- list.files(path=directory, pattern=".csv", full.names=TRUE)
     values <- numeric()
     for (i in id) {
       data <- read.csv(filelist[i])
