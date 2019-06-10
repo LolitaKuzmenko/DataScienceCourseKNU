@@ -312,12 +312,15 @@ Texas
 
 
 answer_six<-function() {
-  df_pop<-cbind(census_df_draft$STNAME, census_df_draft$CTYNAME, census_df_draft$CENSUS2010POP)
-  df_pop_gr1<-split.data.frame(df_pop_draft[ , c(2, 3)], df_pop_draft[ , 1])
-  df_pop_gr1
-  }
-  
-answer_six()
+  df_order<-census_df[order(census_df$STNAME, -census_df$CENSUS2010POP), ]
+  df_split<-split(df_order, df_order$STNAME)
+  df_split<-lapply(df_split, function (x) sum (x[2:4, "CENSUS2010POP"]))
+  df_split<-df_split[order(unlist(df_split), decreasing = TRUE, na.last = TRUE)]
+  names(df_split) [1:3]
+}
+
+> answer_six()
+[1] "California" "Texas"      "Illinois"
 
 answer_seven<-function() {
   df_pop2<-census_df[, 10:15]
